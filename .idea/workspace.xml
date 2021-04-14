@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee99cc71-c657-4036-82d7-2df31de92098" name="Default Changelist" comment="" />
+    <list default="true" id="ee99cc71-c657-4036-82d7-2df31de92098" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/publisher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/publisher.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +41,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scienceweb" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
