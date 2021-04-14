@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Markaz" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="ASMI">
         <serverdata>
@@ -26,12 +26,8 @@
       <paths name="Markaz">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/scienceweb.uz/site" local="$PROJECT_DIR$" web="/" />
-            <mapping local="" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
-          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="TSUE">
@@ -49,6 +45,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
