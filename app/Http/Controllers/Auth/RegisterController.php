@@ -64,10 +64,10 @@ class RegisterController extends Controller
     protected function userValidator(array $data)
     {
         return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/u'],
-            'last_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z]+$/u'],
-            'middle_name' => ['max:255', 'regex:/^[a-zA-Z]+$/u', 'nullable'],
-            'phone' => ['string', 'max:255', 'regex:/^\+[0-9]+$/u'],
+            'first_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s\'\-]+$/u'],
+            'last_name' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s\'\-]+$/u'],
+            'middle_name' => ['max:255', 'regex:/^[a-zA-Z\s\'\-]+$/u', 'nullable'],
+            'phone' => ['string', 'max:15', 'regex:/^\+?[0-9]+$/u'],
             'country_code' => ['required'],
             'state' => ['string', 'max:255', 'regex:/^[a-zA-Z0-9\-\s]+$/u'],
 //            'address_1' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9\-\s]+$/u'],
@@ -93,6 +93,7 @@ class RegisterController extends Controller
             'password.min' => 'Пароль должен содержать не менее 8 символов.',
         ]);
     }
+
     protected function publisherValidator(array $data){
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],

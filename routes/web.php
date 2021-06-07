@@ -3,6 +3,7 @@
 use App\Admin\Controllers\OrganizationController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\UserController;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OJS\SubmissionController as OJSSubmissionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +42,17 @@ Route::group(['middleware' => 'setLocale'], function (){
         $router->get('/edit', [ProfileController::class, 'edit'])->name('edit');
         $router->post('/update', [ProfileController::class, 'update'])->name('update');
         $router->resource('organizations', OrganizationController::class);
+
+    });
+
+    Route::group([
+        'prefix'        => 'my',
+        'middleware' => ['auth:publisher', 'verified'],
+        'as' => 'publisher.'
+    ], function (Router $router){
+        $router->get('/settings', [PublisherController::class, 'settings'])->name('settings');
+        $router->get('/create_api_token', [PublisherController::class, 'createApiToke'])->name('create_api_token');
+
     });
 
     // Submissions
@@ -68,4 +81,10 @@ Route::group(['middleware' => 'setLocale'], function (){
     Route::get('conference/create', [EventController::class, 'createConference'])->name('conference.create');
     Route::get('journal/create', [EventController::class, 'createJournal'])->name('journal.create');
     Route::resource('event', EventController::class);
+
+    Route::get('ojs', [OJSSubmissionController::class, 'index']);
+    Route::get('ojs/user/{login}', [OJSSubmissionController::class, 'showUser']);
+    Route::get('ojs/publication/{id}', [OJSSubmissionController::class, 'showPublication']);
+    Route::delete('ojs/citation_delete/{id}', [OJSSubmissionController::class, 'deleteCitation']);
+
 });

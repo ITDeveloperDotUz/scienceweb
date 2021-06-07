@@ -206,4 +206,8 @@ class Submission extends Model
         }
         return $details;
     }
+
+    public function scopePublished($query){
+        return $query->where('status', 1);
+    }
 }

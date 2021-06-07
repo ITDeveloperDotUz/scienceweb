@@ -21,6 +21,7 @@ Route::group([
     $router->resource('tariffs', TariffController::class);
     $router->resource('client_roles', ClientRoleController::class);
     $router->resource('client_permissions', ClientPermissionController::class);
+    $router->resource('publications', PublicationController::class);
 });
 
 

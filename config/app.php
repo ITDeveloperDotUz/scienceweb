@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'кг',
+    'locale' => 'ru',
 
     'locales' => [
         'uz', 'ru', 'en'

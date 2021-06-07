@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::group(['middleware' => 'auth:sanctum'], function (){
+    Route::get('/users', function (){
+        return \App\Models\User::find(7);
+    });
+});
+
+
+
+Route::get('/', function(){
+    return \App\Models\User::all();
 });

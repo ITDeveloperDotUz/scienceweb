@@ -29,7 +29,7 @@ class SectionController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'))->display(function (){
-            return $this->localizedDetails(app()->getLocale())->name;
+            return $this->localizedDetails()->name;
         });
         $grid->column('slug', __('Slug'));
         $grid->column('created_at', __('Created at'));

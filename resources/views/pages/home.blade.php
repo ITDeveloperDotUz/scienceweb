@@ -12,10 +12,10 @@
                         <div class="content-column col-lg-7 col-md-12 col-sm-12">
                             <div class="inner-column">
                                 <div class="title">I-Edu Group </div>
-                                <h1>База <span> Научных исследований</span> в Узбекистане</h1>
+                                <h1>База <span> Научных исследований</span> в Средней Азии</h1>
                                 <div class="text">
                                     Мы оказываем услуги создания и продвижения <br>
-                                    научных публикаций издателей в Республике Узбекистан
+                                    научных публикаций издателей в  Средней Азии
                                 </div>
                                 <div class="btn-box">
                                     <a href="{{ url('journals') }}" class="theme-btn btn-style-one"><span class="txt">Список журналов</span></a>
@@ -33,10 +33,10 @@
                         <div class="content-column col-lg-7 col-md-12 col-sm-12">
                             <div class="inner-column">
                                 <div class="title">I-Edu Group </div>
-                                <h1>База <span> Научных исследований</span> в Узбекистане</h1>
+                                <h1>База <span> Научных исследований</span> в Средней Азии</h1>
                                 <div class="text">
                                     Мы оказываем услуги создания и продвижения <br>
-                                    научных публикаций издателей в Республике Узбекистан
+                                    научных публикаций издателей в Средней Азии
                                 </div>
                                 <div class="btn-box">
                                     <a href="{{ url('journals') }}" class="theme-btn btn-style-one"><span class="txt">Список журналов</span></a>

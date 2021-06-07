@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-6 col-sm-12 form-group">
                 <label for="">Телефон</label>
-                <input type="text" name="phone" placeholder="Телефон" value="@isset($input['phone']){{ $input['phone'] }}@endisset" required>
+                <input type="text" name="phone" placeholder="Телефон" value="@isset($input['phone']){{ $input['phone'] }}@endisset">
                 @if($errors->has('phone') !== null)
                     @foreach($errors->get('phone') as $msg)
                         <strong class="text-danger">{{ $msg }}</strong><br>

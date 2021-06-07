@@ -57,8 +57,7 @@ class SubmissionController extends Controller
         $data = json_encode($citation);
         $style = StyleSheet::loadStyleSheet($style);
         $citeProc = new CiteProc($style);
-//        dump(json_decode($citation));
-//        dump(json_decode($data));
+
         return $citeProc->render(json_decode($data), "bibliography");
     }
 
@@ -81,7 +80,6 @@ class SubmissionController extends Controller
     public function create()
     {
         $this->authorize('create', Submission::class);
-
         if(!session()->has('submission_filename')){
             return view('submissions.upload_form');
         }
@@ -108,7 +106,7 @@ class SubmissionController extends Controller
             'status' => 0,
             'locale' => $data['locale'],
             'file' => $data['path'],
-            'citations' => $data['references'],
+            'citations' => $data['references'] ?? null,
             'preview' => $data['preview_filename'],
             'thumb' => $data['thumb_filename'],
             'category_id' => $data['category_id'],
@@ -252,22 +250,26 @@ class SubmissionController extends Controller
     {
         $this->authorize('delete', $submission);
         $submission->delete();
+        $submission->references()->delete();
+        $submission->coauthors()->delete();
+        $submission->details()->delete();
         return back()->with(['messages' => [['status' => 'success', 'message' => 'Publication was deleted']]]);
     }
 
     public function upload_file(Request $request)
     {
+
         $user_id = auth()->user()->id;
         $preview_filename = '';
         $thumb_filename = '';
         $full_filename = $user_id .'-full-'. uniqid() . '.' . $request->file('submission_file')->extension();
         $request->file('submission_file')->storeAs('public/submission_files/' . $user_id , $full_filename);
-
+        $isThumbValid = ($request->hasFile('submission_thumbnail')) and ($request->file('submission_thumbnail')->extension() == 'jpg' or $request->file('submission_thumbnail')->extension() == 'jpeg');
         if ($request->hasFile('submission_preview')){
             $preview_filename = $user_id .'-preview-'. uniqid() . '.' . $request->file('submission_preview')->extension();
             $request->file('submission_preview')->storeAs('public/submission_files/' . $user_id , $preview_filename);
         }
-        if ($request->hasFile('submission_thumbnail')){
+        if ($isThumbValid){
             $thumb_filename = $user_id .'-thumb-'. uniqid() . '.' . $request->file('submission_thumbnail')->extension();
             $request->file('submission_thumbnail')->storeAs('public/submission_files/' . $user_id , $thumb_filename);
         }
@@ -277,7 +279,7 @@ class SubmissionController extends Controller
             'ext' => $request->file('submission_file')->getClientOriginalExtension(),
             'path' => 'storage/submission_files/' . $user_id . '/' . $full_filename,
             'preview_filename' => $request->hasFile('submission_preview')? 'storage/submission_files/' . $user_id .'/'. $preview_filename : '',
-            'thumb_filename' => $request->hasFile('submission_thumbnail')? 'storage/submission_files/' . $user_id .'/'. $thumb_filename : '',
+            'thumb_filename' => $isThumbValid ? 'storage/submission_files/' . $user_id .'/'. $thumb_filename : '',
             'submission_locale' => $request->input('locale')
         ]);
     }

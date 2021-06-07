@@ -52,6 +52,15 @@
                             @endforeach
                         </div>
                     </div>
+<<<<<<< Updated upstream
+=======
+
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+>>>>>>> Stashed changes
 
                 </div>
             </div>

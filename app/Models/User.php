@@ -7,13 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
+//use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -85,7 +85,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function refreshGSProfile($link)
     {
-        $gs_user_id = substr($link, strpos($link, 'user='));
+        $gs_user_id = $link;
         $gs_data = GoogleScholarProfileProvider::getProfileData($gs_user_id);
         if ($gs_data != []){
             $this->scholarProfile()->updateOrCreate(['user_id' => $this->id], [

@@ -19,7 +19,7 @@ class SiteController extends Controller
     {
 //        dd(auth()->guard('publisher')->check());
 //        dd(auth()->guard()->check());
-        $submissions = Submission::all();
+        $submissions = Submission::published()->get();
         return view('pages.home', ['hideTop' => true, 'submissions' => $submissions]);
     }
 

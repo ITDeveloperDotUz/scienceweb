@@ -97,14 +97,16 @@
                                     <p><strong>{{ $user->email }}</strong></p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <p class="mb-0">Phone</p>
+                            @isset($user->phone)
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p class="mb-0">Phone</p>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <p><strong>{{ $user->phone }}</strong></p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <p><strong>{{ $user->phone }}</strong></p>
-                                </div>
-                            </div>
+                            @endisset
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="mb-0">Address</p>
@@ -117,32 +119,32 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="row gutters-sm text-center">
-                        <div class="col-sm-4 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <strong>Scienceweb H-index</strong>
-                                    <h1>12</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <strong>Scienceweb i10-index</strong>
-                                    <h1>15</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <strong>Scienceweb Citations</strong>
-                                    <h1>45</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="row gutters-sm text-center">--}}
+{{--                        <div class="col-sm-4 mb-3">--}}
+{{--                            <div class="card h-100">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <strong>Scienceweb H-index</strong>--}}
+{{--                                    <h1>12</h1>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-sm-4 mb-3">--}}
+{{--                            <div class="card h-100">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <strong>Scienceweb i10-index</strong>--}}
+{{--                                    <h1>15</h1>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-sm-4 mb-3">--}}
+{{--                            <div class="card h-100">--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <strong>Scienceweb Citations</strong>--}}
+{{--                                    <h1>45</h1>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="row gutters-sm text-center">
                         @if($user->scholarProfile)
                             <div class="col-sm-4 mb-3">

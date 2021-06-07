@@ -17,6 +17,23 @@ class PublisherController extends Controller
         //
     }
 
+
+    public function settings()
+    {
+        return view('profile/publisher_settings');
+    }
+
+    public function createApiToke()
+    {
+        $user = auth()->user();
+        if ($user->tokens) {
+            $user->tokens()->delete();
+        }
+
+        $token = $user->createToken('basic');
+
+        return ['token' => $token->plainTextToken];
+    }
     /**
      * Show the form for creating a new resource.
      *

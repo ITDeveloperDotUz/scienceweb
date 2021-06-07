@@ -111,7 +111,7 @@
 {{--                                    Discussion--}}
 {{--                                </a>--}}
 {{--                            </li>--}}
-                            @if($publication->author->tariff[0]->slug == 'premium')
+                            @if($publication->author->can('add reference-to-submission'))
                                 <li class="nav-item">
                                     <a
                                         class="nav-link "
