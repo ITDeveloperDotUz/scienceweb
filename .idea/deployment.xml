@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="Markaz" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="ASMI">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
-          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="Comarket GCP">
@@ -29,8 +26,19 @@
       <paths name="Markaz">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www/scienceweb.uz/site" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.editorconfig" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.env" />
+            <excludedPath local="true" path="$PROJECT_DIR$/storage" />
+            <excludedPath path="/var/www/scienceweb.uz/site/storage" />
+            <excludedPath path="/var/www/scienceweb.uz/site/vendor" />
+            <excludedPath path="/var/www/scienceweb.uz/site/.env" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="TSUE">
