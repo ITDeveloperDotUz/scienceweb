@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-2 my-auto">
-                                            <label for="preview"><strong>Превью</strong></label>
+                                            <label for="preview"><strong>Фрагмент / Превью</strong></label>
                                         </div>
                                         <div class="col-md-10">
                                             <input class="form-control" id="preview" type="file" name="submission_preview" accept="application/pdf">

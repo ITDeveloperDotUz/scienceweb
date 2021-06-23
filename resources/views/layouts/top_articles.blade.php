@@ -16,7 +16,7 @@
                                 {{--                            </div>--}}
                                 <div class="col-sm-12 pt-2">
                                     <div class="px-2">
-                                        <a href="/">
+                                        <a href="{{ route('publication.show', $sub->id) }}">
                                             <h5 class="title">
                                                 @isset($details->flags['title'])
                                                     <img

@@ -17,7 +17,7 @@
                             <span class="icon ti-pie-chart"></span>
                         </div>
                         <h5><a href="/">{{ $publisher->name }}</a></h5>
-                        <div class="text">Great explorer the master builder working human happiness.</div>
+                        <div class="text"></div>
                     </div>
                 </div>
 

@@ -5,17 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
 use App\Models\OrcidToken;
-use App\Models\Profile;
 use App\Models\Publisher;
 use App\Providers\ORCIDProvider;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -167,16 +164,22 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'country_code' => $data['country_code'],
             'state' => $data['state'],
-            'orcid' => $data['orcid'],
-            'gs_profile' => $data['gs_profile'],
+            'orcid' =>  $data['orcid'] ? Str::of($data['orcid'])->match('/\w{4}-\w{4}-\w{4}-\w{4}/'): null,
+            'gs_profile' => $data['google_scholar'] ? Str::of($data['google_scholar'])->match('/user=([A-Za-z0-9_-]+)/') : null,
 //            'address_1' => $data['address_1'],
 //            'address_2' => $data['address_2'],
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->profile()->create(['orcid' => $user->orcid]);
-        if ($data['gs_profile']){
-            $user->refreshGSProfile($data['gs_profile']);
+        $user->profile()->create([
+            'orcid' => $user->orcid,
+            'social_links' => json_encode([
+                'orcid' => 'https://orcid.org/'.$user->orcid,
+                'google_scholar' => 'https://scholar.google.com/citations?user='.$user->gs_profile,
+            ])
+        ]);
+        if ($data['google_scholar']){
+            $user->refreshGSProfile($user->gs_profile);
         }
         $user->assignRole([$data['role'], 'user-basic-tariff']);
         if ($user){
@@ -217,4 +220,5 @@ class RegisterController extends Controller
         $details = ORCIDProvider::getPersonalDetails($token);
         return redirect(route('register'))->with(['orcidToken' => $token, 'details' => $details]);
     }
+
 }

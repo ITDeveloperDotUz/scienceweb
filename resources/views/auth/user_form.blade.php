@@ -75,10 +75,10 @@
             </div>
 
             <div class="col-md-6 col-sm-12 form-group">
-                <label for="gs_profile">Сылка на профиль в Google Scholar</label>
-                <input type="text" name="gs_profile" placeholder="Оставьте хдесь сылку" value="@isset($input['gs_profile']){{ $input['gs_profile'] }}@endisset" >
-                @if($errors->has('gs_profile') !== null)
-                    @foreach($errors->get('gs_profile') as $msg)
+                <label for="google_scholar">Ссылка на профиль в Google Scholar</label>
+                <input type="text" name="google_scholar" placeholder="Оставьте хдесь сылку" value="@isset($input['google_scholar']){{ $input['google_scholar'] }}@endisset" >
+                @if($errors->has('google_scholar') !== null)
+                    @foreach($errors->get('google_scholar') as $msg)
                         <strong class="text-danger">{{ $msg }}</strong><br>
                     @endforeach
                 @endif

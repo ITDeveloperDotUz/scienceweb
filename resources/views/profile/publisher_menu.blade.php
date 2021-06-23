@@ -1,5 +1,4 @@
 
-<<<<<<< Updated upstream
 {{--<div class="row gutters-sm">--}}
 {{--    <div class="col-6 text-center">--}}
 {{--        <a href="{{ route('event.create') }}">--}}
@@ -52,7 +51,7 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-=======
+
 <div class="row gutters-sm">
     <div class="col-6 text-center">
         <a href="{{ route('event.create') }}">
@@ -107,4 +106,3 @@
         </a>
     </div>
 </div>
->>>>>>> Stashed changes

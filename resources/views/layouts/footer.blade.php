@@ -51,30 +51,30 @@
                             <div class="footer-widget links-widget">
                                 <h5>Пользователям</h5>
                                 <ul class="list-link">
-                                    <li><a href="">FAQS</a></li>
-                                    <li><a href="">Support</a></li>
-                                    <li><a href="">Sitemap</a></li>
-                                    <li><a href="">Community</a></li>
+                                    <li><a href="">ЧаВо</a></li>
+                                    <li><a href="">Поддержка</a></li>
+                                    <li><a href="">Карта сайта</a></li>
+                                    <li><a href="">Сообщество</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Footer Column -->
-                        <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                            <div class="footer-widget newsletter-widget">
-                                <h5>Подписаться</h5>
-                                <div class="text">Подпишитесь чтобы первым получать наши новости</div>
-                                <!-- Newsletter Form -->
-                                <div class="newsletter-form">
-                                    <form method="post" action="contact.html">
-                                        <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="E-mail" required>
-                                            <button type="submit" class="theme-btn icofont-arrow-right"></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="footer-column col-lg-6 col-md-6 col-sm-12">--}}
+{{--                            <div class="footer-widget newsletter-widget">--}}
+{{--                                <h5>Подписаться</h5>--}}
+{{--                                <div class="text">Подпишитесь чтобы первым получать наши новости</div>--}}
+{{--                                <!-- Newsletter Form -->--}}
+{{--                                <div class="newsletter-form">--}}
+{{--                                    <form method="post" action="">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <input type="email" name="email" value="" placeholder="E-mail" required>--}}
+{{--                                            <button type="submit" class="theme-btn icofont-arrow-right"></button>--}}
+{{--                                        </div>--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="row clearfix">
 
                         <div class="col-lg-8 col-md-12 col-sm-12">
-                            <div class="copyright">Copyright 2021. Все права защищены  | Проект создан компанией
+                            <div class="copyright">Copyright 2021. Все права защищены | Проект создан компанией
                                  <a href="https://i-edu.uz" target="_blank">i-Edu Group</a>
                             </div>
                                 <script async="" src="https://www.google-analytics.com/analytics.js"></script>

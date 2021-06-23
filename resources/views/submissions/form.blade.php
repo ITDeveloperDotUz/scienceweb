@@ -116,7 +116,7 @@
                                     @can('add reference-to-submission')
                                         <div class="row">
                                             <div class="col-md-2 my-auto">
-                                                <label for="references"><strong>Библиографические сылки</strong></label>
+                                                <label for="references"><strong>Библиографические ссылки</strong></label>
                                             </div>
                                             <div class="col-md-10">
                                                 <textarea name="references" id="references" cols="30"

@@ -63,7 +63,9 @@ Route::group(['middleware' => 'setLocale'], function (){
     // User
     Route::resource('user', UserController::class)->middleware(['auth', 'verified']);
     Route::post('/user/upload-avatar', [UserController::class, 'upload_avatar']);
-    Route::get('/{orcid}', [ProfileController::class, 'profile'])->where('orcid', '(\w{4}-){3}\w{4}');
+    Route::get('/{orcid}', [ProfileController::class, 'publicProfile'])->where('orcid', '(\w{4}-){3}\w{4}');
+    Route::get('refreshProfile/{system}/{user_id}', [ProfileController::class, 'refreshProfiles'])->name('refreshProfile');
+    Route::get('authors/{system?}/', [ProfileController::class, 'getList'])->name('authors');
 
     // Auth
     Auth::routes(['verify' => true]);

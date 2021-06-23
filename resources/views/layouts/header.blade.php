@@ -86,8 +86,16 @@
 {{--                                    </ul>--}}
 {{--                                </li>--}}
                                 <li><a href="{{ url('journals') }}">Журналы</a></li>
+                                <li class="dropdown"><a href="#">Авторы</a>
+                                    <ul>
+                                        <li><a href="{{ url('authors/scienceweb') }}">Авторы Scienceweb</a></li>
+                                        <li><a href="{{ url('authors/publons') }}">Авторы Publons (Web of Science)</a></li>
+                                        <li><a href="{{ url('authors/google_scholar') }}">Авторы Google Scholar</a></li>
+                                        <li><a href="{{ url('authors/scopus') }}">Авторы Scopus (Elsevier)</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="{{ route('event.show', 'conference') }}">Конференции</a></li>
-                                <li><a href="{{ url('publishers') }}">Издатели</a></li>
+{{--                                <li><a href="{{ url('publishers') }}">Издатели</a></li>--}}
 {{--                                <li><a href="#">Экспертиза сайта</a></li>--}}
                                 <li><a href="{{ url('contacts') }}">Контакты</a></li>
                             </ul>

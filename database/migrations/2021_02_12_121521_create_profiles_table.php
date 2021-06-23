@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration
             $table->string('swaid')->default(0);
             $table->string('orcid')->nullable();
             $table->string('avatar')->nullable();
+            $table->string('gender')->nullable();
             $table->string('work_org')->nullable();
             $table->string('work_dep')->nullable();
             $table->string('work_job')->nullable();
@@ -27,7 +28,7 @@ class CreateProfilesTable extends Migration
             $table->string('address_1')->nullable();
             $table->string('address_2')->nullable();
             $table->string('keywords')->nullable();
-            $table->string('social_links')->nullable();
+            $table->text('social_links')->nullable();
             $table->integer('is_public')->nullable();
             $table->integer('h_index')->default(0);
             $table->integer('i10_index')->default(0);

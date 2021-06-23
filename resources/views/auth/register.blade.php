@@ -25,22 +25,22 @@
                                     role="tab"
                                     aria-controls="author"
                                     aria-selected="true">
-                                    Author
+                                    Автор
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link"
-                                    id="publisher-role-tab"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#publisher"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="publisher"
-                                    aria-selected="false">
-                                    Publisher
-                                </a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a--}}
+{{--                                    class="nav-link"--}}
+{{--                                    id="publisher-role-tab"--}}
+{{--                                    data-bs-toggle="tab"--}}
+{{--                                    data-bs-target="#publisher"--}}
+{{--                                    type="button"--}}
+{{--                                    role="tab"--}}
+{{--                                    aria-controls="publisher"--}}
+{{--                                    aria-selected="false">--}}
+{{--                                    Издатель--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                     <div class="tab-content">

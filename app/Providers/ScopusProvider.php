@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use GuzzleHttp\Client;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
-class GoogleScholarProfileProvider extends ServiceProvider
+class ScopusProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -28,11 +28,12 @@ class GoogleScholarProfileProvider extends ServiceProvider
         //
     }
 
-    public static function getProfileData($user_id)
+    public static function getProfileData($link)
     {
+        $str = Str::of($link);
+        $id = $str->match('/authorId=(\d+)/');
         $client = new Client();
-
-        $data = $client->get('https://scholarapi.scienceweb.uz/google_scholar?user=' . $user_id, [
+        $data = $client->get('https://scholarapi.scienceweb.uz/scopus?user=' . $id, [
             'headers' => ['Accept' => 'application/json']
         ])->getBody();
         return json_decode($data, true);

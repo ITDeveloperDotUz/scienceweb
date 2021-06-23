@@ -61,22 +61,22 @@
                                                 role="tab"
                                                 aria-controls="author"
                                                 aria-selected="true">
-                                                Author
+                                                Автор
                                             </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a
-                                                class="nav-link"
-                                                id="publisher-role-tab"
-                                                data-bs-toggle="tab"
-                                                data-bs-target="#publisher"
-                                                type="button"
-                                                role="tab"
-                                                aria-controls="publisher"
-                                                aria-selected="false">
-                                                Publisher
-                                            </a>
-                                        </li>
+{{--                                        <li class="nav-item">--}}
+{{--                                            <a--}}
+{{--                                                class="nav-link"--}}
+{{--                                                id="publisher-role-tab"--}}
+{{--                                                data-bs-toggle="tab"--}}
+{{--                                                data-bs-target="#publisher"--}}
+{{--                                                type="button"--}}
+{{--                                                role="tab"--}}
+{{--                                                aria-controls="publisher"--}}
+{{--                                                aria-selected="false">--}}
+{{--                                                Издатель--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
                                     </ul>
                                 </div>
                                 <div class="tab-content">
@@ -86,7 +86,7 @@
                                         <!--Form Group-->
                                             <input type="hidden" name="role" value="user">
                                             <div class="form-group">
-                                                <label for="email">лектронная почта</label>
+                                                <label for="email">Электронная почта</label>
                                                 <input type="email" id="email" name="email" value="" placeholder="Введите ваш email" required="">
                                                 @error('email')
                                                     <p class="text-danger">{{ $message }}</p>
@@ -104,7 +104,7 @@
                                                     <input type="checkbox" id="remember" name="remember">
                                                 </div>
                                                 <div class="form-group col-6">
-                                                    <a class="pull-right" href="{{ route('password.request') }}">Forgot password?</a>
+                                                    <a class="pull-right" href="{{ route('password.request') }}">Забыли пароль?</a>
                                                 </div>
                                             </div>
 
@@ -121,7 +121,7 @@
                                             <input type="hidden" name="role" value="publisher">
 
                                             <div class="form-group">
-                                                <label for="email">лектронная почта</label>
+                                                <label for="email">Электронная почта</label>
                                                 <input type="email" id="email" name="email" value="" placeholder="Введите ваш email" required="">
                                                 @error('email')
                                                 <p class="text-danger">{{ $message }}</p>
@@ -139,7 +139,7 @@
                                                     <input type="checkbox" id="remember" name="remember">
                                                 </div>
                                                 <div class="form-group col-6">
-                                                    <a class="pull-right" href="{{ route('password.request') }}">Forgot password?</a>
+                                                    <a class="pull-right" href="{{ route('password.request') }}">Забыли пароль?</a>
                                                 </div>
                                             </div>
 

@@ -60,7 +60,7 @@
                             @endforeach
                         @endif
                     </p>
-                    <p><b><i class="fa fa-eye"></i> Просмотры:</b> 13256, <b><i class="fa fa-file"></i> Страницы:</b> 10, <b><i class="fa fa-file-download"></i> Файлы:</b> 1</p>
+                    <p><b><i class="fa fa-eye"></i> Просмотры:</b> 1, <b><i class="fa fa-file"></i> Страницы:</b> 10, <b><i class="fa fa-file-download"></i> Файлы:</b> 1</p>
                     <p><b><i class="fa fa-calendar-alt"></i> Год публикации:</b> {{ $publication->published_at->format('Y') }}</p>
 
                     <p><b>Издатель:</b> {{ $details->publisher }}</p>
@@ -122,7 +122,7 @@
                                         role="tab"
                                         aria-controls="references"
                                         aria-selected="true">
-                                        References
+                                        Библиография
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -135,23 +135,23 @@
                                         role="tab"
                                         aria-controls="citations"
                                         aria-selected="true">
-                                        Citations
+                                        Цитирования
                                     </a>
                                 </li>
                             @endif
-                            <li class="nav-item">
-                                <a
-                                    class="nav-link"
-                                    id="metrics-tab"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#metrics"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="metrics"
-                                    aria-selected="true">
-                                    Metrics
-                                </a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a--}}
+{{--                                    class="nav-link"--}}
+{{--                                    id="metrics-tab"--}}
+{{--                                    data-bs-toggle="tab"--}}
+{{--                                    data-bs-target="#metrics"--}}
+{{--                                    type="button"--}}
+{{--                                    role="tab"--}}
+{{--                                    aria-controls="metrics"--}}
+{{--                                    aria-selected="true">--}}
+{{--                                    Метрики--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                         </ul>
                     </div>
                     <div class="tab-content">

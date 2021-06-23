@@ -52,11 +52,11 @@
                                 <div class="form-group">
                                     <label>Тема вопроса</label>
                                     <select class="custom-select-box">
-                                        <option>Choose topic</option>
-                                        <option>Topic 01</option>
-                                        <option>Topic 02</option>
-                                        <option>Topic 03</option>
-                                        <option>Topic 04</option>
+                                        <option>Выберите тему</option>
+                                        <option>Трудности с использованием</option>
+                                        <option>Предложения</option>
+                                        <option>Жалоба</option>
+                                        <option>Отзыв</option>
                                     </select>
                                 </div>
                                 <!--Form Group-->

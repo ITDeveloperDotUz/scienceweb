@@ -122,4 +122,18 @@ class UserController extends AdminController
 
         return $form;
     }
+
+    public function destroy($id)
+    {
+        $model = User::find($id);
+        $model->profile()->delete();
+        $model->scopusProfile()->delete();
+        $model->scholarProfile()->delete();
+        $model->publonsProfile()->delete();
+        $model->tariff()->delete();
+        return response()->json([
+            'status'  => true,
+            'message' => 'User was successfully deleted',
+        ]);
+    }
 }
